@@ -9,7 +9,7 @@ public class StudentComparator implements Comparator<StudentCodeGym> {
         if (o1.id > o2.id) {
             return 1;
         } else if (o1.id == o2.id) {
-            return 0;
+            return o1.name.compareTo(o2.name);
         } else {
             return -1;
         }

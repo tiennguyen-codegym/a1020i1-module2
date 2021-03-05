@@ -46,17 +46,26 @@ public class MainAbstractInterface {
         studentCodeGymList.add(studentCodeGym2);
         studentCodeGymList.add(studentCodeGym4);
 
-        Collections.sort(studentCodeGymList, new Comparator<StudentCodeGym>() {
-            @Override
-            public int compare(StudentCodeGym o1, StudentCodeGym o2) {
-                return o1.getName().compareTo(o2.getName());
-            }
-        });
+        // comparable
+        Collections.sort(studentCodeGymList);
+
+        // comparator
+        // menu 1
+        Collections.sort(studentCodeGymList, new StudentComparator());
+        // menu 2
+//        Collections.sort(studentCodeGymList, new DateOfBirthComparator());
+
+        // comparator anonymous class
+//        Collections.sort(studentCodeGymList, new Comparator<StudentCodeGym>() {
+//            @Override
+//            public int compare(StudentCodeGym o1, StudentCodeGym o2) {
+//                return o1.getName().compareTo(o2.getName());
+//            }
+//        });
 
         for (StudentCodeGym studentCodeGym : studentCodeGymList) {
             System.out.println(studentCodeGym);
         }
-
 
     }
 }
